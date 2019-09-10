@@ -14,12 +14,17 @@ public class TicTacToe extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("Hello world");
 		Button btn = new Button();
-		btn.setText("Say 'Hello World'");
-		btn.setOnAction( event -> System.out.println("Hello world"));
+		btn.setText("Play Game");
+		btn.setOnAction( event -> startGame(primaryStage)); 
 		StackPane root = new StackPane();
 		root.getChildren().add(btn);
 		primaryStage.setScene(new Scene(root,300,250));
 		primaryStage.show();
+	}
+	
+	private void startGame(Stage primaryStage) {
+		primaryStage.setTitle("Tic Tac Toe");
+		
 	}
 	
 	
