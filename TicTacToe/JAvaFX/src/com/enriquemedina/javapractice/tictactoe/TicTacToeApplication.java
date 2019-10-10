@@ -8,17 +8,13 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class TicTacToe extends Application{
+public class TicTacToeApplication extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		primaryStage.setTitle("Hello world");
-		Button btn = new Button();
-		btn.setText("Play Game");
-		btn.setOnAction( event -> startGame(primaryStage)); 
-		StackPane root = new StackPane();
-		root.getChildren().add(btn);
-		primaryStage.setScene(new Scene(root,300,250));
+		primaryStage.setTitle("TicTacToe");
+		primaryStage.setScene(SceneManager.getStartScene());
+		primaryStage.getScene().
 		primaryStage.show();
 	}
 	
