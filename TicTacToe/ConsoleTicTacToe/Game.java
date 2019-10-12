@@ -7,27 +7,21 @@ public class Game {
 	
 	public static void main(String[] args) {
 		
-		TicTacToe game = new TicTacToe();
 		System.out.println("Initializing tic, tac, toe");
 		
 		
 		int menuOption = 0;
-		while( menuOption != 4) {
-			printMainMenu();
-			menuOption = getMenuOption();
-			
-			
-			
-			
+		printMainMenu();
+		menuOption = getMenuOption();
+		if( menuOption != 4) {
+			TicTacToe game = new TicTacToe(menuOption);	
+			game.startGame();
+			while( !game.isOver() ) {
+				game.nextTurn();
+			}
+		
 		}
 		
-		game.startGame();
-		while( !game.isOver() ) {
-			game.showBoard();
-			System.out.println("It's " + game.getCurrentPlayer() + "What is your pick?");
-			
-			game.nextTurn();
-		}
 		
 		System.out.println("Thank you for playing!");
 
